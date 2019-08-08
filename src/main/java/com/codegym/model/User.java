@@ -99,14 +99,14 @@ public class User implements Validator {
         if (!phoneNumber.startsWith("0")) {
             errors.rejectValue("phoneNumber", "phoneNumber.startsWith");
         }
-        if (!phoneNumber.matches("(^$|[0-9]*$)")){
+        if (!phoneNumber.matches("(^[0-9]*$)")){
             errors.rejectValue("phoneNumber", "phoneNumber.matches");
         }
         if (age <= 18){
             errors.rejectValue("age", "age.condition");
         }
 
-        if (!email.matches("(^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(.[A-Za-z0-9]+)$)")){
+        if (!email.matches("(^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$)")){
             errors.rejectValue("email", "email.matches");
         }
 
